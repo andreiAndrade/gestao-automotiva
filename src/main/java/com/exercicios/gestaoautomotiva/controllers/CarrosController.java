@@ -16,35 +16,23 @@ public class CarrosController {
         this.bancoDados = bancoDados;
     }
 
-    /**
-    * Listar carros
-    */
     @GetMapping
-    public List<Carro> list() {
+    public List<Carro> listarCarro() {
         return bancoDados.list();
     }
 
-    /**
-    * Criar carro
-    */
     @PostMapping
-    public List<Carro> create(@RequestBody Carro carro) {
+    public List<Carro> criarCarro(@RequestBody Carro carro) {
         return bancoDados.addCarro(carro);
     }
 
-    /**
-     * Deletar carro
-     */
     @DeleteMapping("/{carroId}")
-    public List<Carro> delete(@PathVariable String carroId) {
+    public List<Carro> deletarCarro(@PathVariable String carroId) {
         return bancoDados.deleteCarro(carroId);
     }
 
-    /**
-     * Atualizar carro
-     */
     @PutMapping("/{carroId}")
-    public List<Carro> update(@PathVariable String carroId, @RequestBody Carro carro) {
+    public List<Carro> atualizarCarro(@PathVariable String carroId, @RequestBody Carro carro) {
         return bancoDados.updateCarro(carroId, carro);
     }
 }
